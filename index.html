@@ -1,21 +1,37 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="en" ng-app="">
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>Data Structure Visualization</title>
+  <meta name="description" content="A Service powered with Angular to visualize your data structures.">
+  <meta name="author" content="Christopher Wheeler">
 
-  <link rel="stylesheet" href="assets/styles.css">
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-  <script src="assets/framework/angular.min.js"></script>
+	<div ng-controller="SimpleController">
+		<ul>
+			<li ng-repeat="cust in customers">
+				{{ cust.name }} | {{ cust.city }}
+			</li>
+		</ul>
+	</div>
+
+	<script src="assets/framework/angular.min.js"></script>
+	<script>
+	var DSVisualizer = angular.module('dsApp', []);
+
+	DSVisualizer.controller('SimpleController', function ($scope){
+		$scope.customers = [
+			{ name: 'Chris Wheeler', city:'San Jose' },
+			{ name: 'James Cameron', city:'Hollywood' },
+			{ name: 'Chris', city:'Seattle' }
+		]
+	});
+	</script>
+
 </body>
 </html>
