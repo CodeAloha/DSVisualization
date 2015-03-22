@@ -5,11 +5,14 @@
 	<body>
 	</body>
 
+	<script type="text/javascript" src="objects/node.js"></script>
+	<script type="text/javascript" src="objects/binarytree.js"></script>
 	<script>
-		var l = new Node(null,null, 1);
-		var r = new Node(null,null, 2);
-		var n = new Node(l,r, 12);
 
-		console.log( n.getLeftNode().getData() );
+		var bst  = new BinaryTree();
+		bst.generateTree(100);
+
+		bst.dfs();
+
 	</script>
 </html>
