@@ -1,18 +1,49 @@
 <html>
 	<head>
 		<title>Data Structure Visualization</title>
+		<style>
+			.container{
+				text-align: center;
+			}
+			.node{
+				border: 1px solid #444;
+				border-radius: 100%;
+				width: 25px;
+				height: 25px;
+				background: #ddd;
+				text-align: center;
+				padding: 10px;
+				float:left;
+				margin-left: 6px;
+			}
+			.depth{
+				width:100%;
+				float:left;
+				padding: 3px;
+			}
+		</style>
 	</head>
 	<body>
+		<div class="container">
+			<div class="depth">
+				<div class="node" style="">300</div>
+			</div>
+			<div class="depth">
+				<div class="node" style="">300</div>
+				<div class="node" style="">300</div>
+			</div>
+		</div>
 	</body>
 
 	<script type="text/javascript" src="objects/node.js"></script>
 	<script type="text/javascript" src="objects/binarytree.js"></script>
 	<script>
 
-		var bst  = new BinaryTree();
+		var bst = new BinaryTree();
 		bst.generateTree(100);
 
-		bst.dfs();
+		bst.dfs(3);
+
 
 	</script>
 </html>

@@ -3,12 +3,35 @@
 		this.depth = 0;
 		this.totalNodes = 0;
 		this.totalSum = 0;
+		var firstNode = true;
+		this.isFirstNode = function(){
+			return firstNode;
+		}
+		this.toggleFirstNode = function(){
+			firstNode = !firstNode;
+		}
 	}
 
 	/*
 		Helper Functions
 	*/
+	BinaryTree.prototype.dfs = function(v, node){
+		if(node == undefined && !this.isFirstNode() ){
+			return;
+		}
+		else if(node == undefined && this.isFirstNode() ){
+			this.toggleFirstNode();
+			node = this.head;
+		}
 
+		if(v == node.data)
+			console.log("Value found " + node.data + "=" + v );
+		else
+			console.log("Did not find value " + node.data + "!=" + v);
+
+		this.dfs(v, node.left );
+		this.dfs(v, node.right);
+	}
 	BinaryTree.prototype.generateTree = function(n, r){
 		if( !Number.isInteger(n) )
 		{
@@ -24,11 +47,12 @@
 			console.log("Generating Tree with " + n + " nodes.");
 		}
 
+		var lastNode 	= null, 
+			randomValue;
 
-		var lastNode 	= null;
 		for(var i=0; i < n; i++)
 		{
-			var randomValue = Math.round( Math.random() * 100 );
+			randomValue = Math.round( Math.random() * 100 );
 
 			if(i == 0)
 			{
