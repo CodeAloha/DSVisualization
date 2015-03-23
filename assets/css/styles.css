@@ -1,0 +1,46 @@
+	body{
+		background: #333;
+	}
+	.container{
+		text-align: center;
+	}
+	.node{
+		border: 1px solid #444;
+		border-radius: 100%;
+		width: 25px;
+		height: 25px;
+		background: #ddd;
+		text-align: center;
+		padding: 10px;
+		margin-left: 10px;
+		color: #777;
+		transition: color 0.2s, background 0.2s;
+		-webkit-transition: color 0.2s, background 0.2s;
+		-moz-transition: color 0.2s, background 0.2s;
+	}
+
+	.node.wrong{
+		border: 1px solid #f66;
+		background: #f99;
+		color: white;
+	}
+	.node.right{
+		border: 1px solid #6f6;
+		background: #9f9;
+		color: white;
+	}
+
+	.depth{
+		width:100%;
+		margin: 0 auto;
+		float:left;
+		padding: 25px;
+	}
+	input[type="number"]{
+		border: 1px solid #222;
+		background: #555;
+		padding: 12px;
+		color: white;
+		margin:0 auto;
+		width: 250px;
+	}

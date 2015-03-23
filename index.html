@@ -1,49 +1,28 @@
 <html>
 	<head>
 		<title>Data Structure Visualization</title>
-		<style>
-			.container{
-				text-align: center;
-			}
-			.node{
-				border: 1px solid #444;
-				border-radius: 100%;
-				width: 25px;
-				height: 25px;
-				background: #ddd;
-				text-align: center;
-				padding: 10px;
-				float:left;
-				margin-left: 6px;
-			}
-			.depth{
-				width:100%;
-				float:left;
-				padding: 3px;
-			}
-		</style>
+
+		<link rel="stylesheet" type="text/css" href="assets/libs/materialize/css/materialize.min.css" ></link>
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css" ></link>
 	</head>
 	<body>
-		<div class="container">
-			<div class="depth">
-				<div class="node" style="">300</div>
-			</div>
-			<div class="depth">
-				<div class="node" style="">300</div>
-				<div class="node" style="">300</div>
-			</div>
+		<h4 class="center white-text">Binary Tree Visualization (rDFS)</h4>
+		<div id="container" class="container">
+			<div id="depth-1" class="depth"></div>
 		</div>
+
+		<input type="number" min="1" max="100" placeholder="Value to search for"></input>
 	</body>
 
+	<link rel="stylesheet" type="text/css" href="assets/libs/materialize/js/materialize.min.js" ></link>
 	<script type="text/javascript" src="objects/node.js"></script>
 	<script type="text/javascript" src="objects/binarytree.js"></script>
 	<script>
 
 		var bst = new BinaryTree();
-		bst.generateTree(100);
+		bst.generateTree(15);
 
 		bst.dfs(3);
-
 
 	</script>
 </html>

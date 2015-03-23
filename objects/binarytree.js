@@ -1,3 +1,7 @@
+/*
+	Binary Tree Class
+*/
+
 	function BinaryTree(head){
 		this.head = head;
 		this.depth = 0;
@@ -25,9 +29,13 @@
 		}
 
 		if(v == node.data)
-			console.log("Value found " + node.data + "=" + v );
+			setTimeout( function (){
+				document.getElementById( node.element ).className += " right";
+			}, (300 * node.num) );
 		else
-			console.log("Did not find value " + node.data + "!=" + v);
+			setTimeout( function (){
+				document.getElementById( node.element ).className += " wrong";
+			}, (300 * node.num) );
 
 		this.dfs(v, node.left );
 		this.dfs(v, node.right);
