@@ -30,16 +30,26 @@
 
 		if(v == node.data)
 			setTimeout( function (){
-				document.getElementById( node.element ).className += " right";
+				$( "#" + node.element ).addClass("correct");
 			}, (300 * node.num) );
 		else
 			setTimeout( function (){
-				document.getElementById( node.element ).className += " wrong";
+				$( "#" + node.element ).addClass("wrong");
 			}, (300 * node.num) );
+
 
 		this.dfs(v, node.left );
 		this.dfs(v, node.right);
 	}
+
+	BinaryTree.prototype.resetTree = function(){
+		$('#container').html('<div id="depth-1" class="depth"></div>');
+
+		window.totalNodes = 0;
+		window.depth = 1;
+
+	}
+
 	BinaryTree.prototype.generateTree = function(n, r){
 		if( !Number.isInteger(n) )
 		{
@@ -50,17 +60,13 @@
 			    toString:    function(){return this.name + ": " + this.message;} 
 			}; 
 		}
-		else
-		{
-			console.log("Generating Tree with " + n + " nodes.");
-		}
 
 		var lastNode 	= null, 
 			randomValue;
 
 		for(var i=0; i < n; i++)
 		{
-			randomValue = Math.round( Math.random() * 100 );
+			randomValue = Math.round( Math.random() * 99 );
 
 			if(i == 0)
 			{

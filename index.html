@@ -1,28 +1,36 @@
-<html>
-	<head>
-		<title>Data Structure Visualization</title>
+<!doctype html>
 
-		<link rel="stylesheet" type="text/css" href="assets/libs/materialize/css/materialize.min.css" ></link>
-		<link rel="stylesheet" type="text/css" href="assets/css/styles.css" ></link>
-	</head>
-	<body>
-		<h4 class="center white-text">Binary Tree Visualization (rDFS)</h4>
-		<div id="container" class="container">
-			<div id="depth-1" class="depth"></div>
-		</div>
+<html lang="en" ng-app="ds-app">
+<head>
+  <meta charset="utf-8">
 
-		<input type="number" min="1" max="100" placeholder="Value to search for"></input>
-	</body>
+  <title>Data Structure Visualization</title>
+  <meta name="description" content="An application that allows you to visualize Data Structures and Algorithms">
+  <meta name="author" content="Christopher Wheeler">
 
-	<link rel="stylesheet" type="text/css" href="assets/libs/materialize/js/materialize.min.js" ></link>
-	<script type="text/javascript" src="objects/node.js"></script>
-	<script type="text/javascript" src="objects/binarytree.js"></script>
-	<script>
+  <link rel="stylesheet" href="libs/materialize/css/materialize.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
-		var bst = new BinaryTree();
-		bst.generateTree(15);
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
 
-		bst.dfs(3);
+<body>
+  
+  <div ui-view></div>
 
-	</script>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-ui/angular-ui-router.js"></script>
+  <script src="libs/materialize/js/materialize.min.js"></script>
+  <script src="app.js"></script>
+
+  <!--DS Models-->
+  <script src="objects/node.js"></script>
+  <script src="objects/binarytree.js"></script>
+  <script src="objects/QuickSort.js"></script>
+
+
+</body>
 </html>
